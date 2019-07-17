@@ -19,7 +19,7 @@
       const result = await reqFoodCategorys()
       console.log(result);
     },
-    //注册标签
+    
     components:{
       FooterGuide
     }
