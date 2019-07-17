@@ -29,14 +29,14 @@
 
 <script>
 export default {
-methods:{
-  goTo(path){
-    //这个不会返回原来的页面,而且导航后不会留下 history 记录
-    this.$router.replace(path)
-      //可以返回原来的页面，导航后会留下 history 记录     
-    //this.$router.push(path)       
+  methods:{
+    goTo(path){
+      //这个不会返回原来的页面,而且导航后不会留下 history 记录
+      this.$router.replace(path)
+        //可以返回原来的页面，导航后会留下 history 记录     
+      //this.$router.push(path)       
+    }
   }
-}
 }
 </script>
 

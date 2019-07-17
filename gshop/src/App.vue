@@ -1,5 +1,7 @@
 <template>
     <div id="app">
+      <!-- <router-view> 是用来渲染通过路由映射过来的组件，当路径更改时， 中的内容也会发生更改 -->
+        <!-- 路由匹配到的组件将显示在这里 -->
       <router-view></router-view>
 
       <!--这里要判断是否要显示底部四个路由,$route表示当前路由,当点击路由时$route是会变换的,$route.meta.showFooter就能获取当前路由-->
