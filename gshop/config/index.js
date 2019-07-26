@@ -15,7 +15,7 @@ module.exports = {
         target:'http://localhost:27017',      //代理目标的基础路径
         changeOrigin:true,     //支持跨域
         pathRewrite:{     //重写路径：去掉路径中开头的‘/api’
-          '/api':'' 
+          '^/api':'' 
         }
       }
     },

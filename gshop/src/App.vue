@@ -11,14 +11,23 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'      //另外发送请求方法
   import FooterGuide from './components/FooterGuide/FooterGuide.vue'
-  import {reqFoodCategorys} from './api'    //引入请求接口函数
+  //import {reqFoodCategorys} from './api'    //引入请求接口函数
 
   export default {
-    async mounted(){
-      const result = await reqFoodCategorys()
-      console.log(result);
+    mounted(){
+      //this.$store.dispatch('getAddress');   //这是触发actions.js请求
+      this.getAddress();    //这是触发actions.js请求
     },
+    methods:{
+      ...mapActions(['getAddress'])    //读取state.js数据
+    },
+
+    // async mounted(){getAddress
+    //   const result = await reqFoodCategorys()
+    //   console.log(result);
+    // },
     //注册标签
     components:{
       FooterGuide
