@@ -9,12 +9,14 @@
           <i class="iconfont iconwode"></i>
         </div>
         <div class="user-info">
-          <p class="user-info-top">登录/注册</p>
+          <!-- 登录成功后显示用户信息 -->
+          <p class="user-info-top" v-if='!userInfo.phone'>{{userInfo.name || '登录/注册'}}</p>
+          <!-- <p class="user-info-top">登录/注册</p> -->
           <p>
             <span class="user-icon">
               <i class="iconfont iconshouji"></i>
             </span>
-            <span class="icon-mobile-number">暂无绑定手机号</span>
+            <span class="icon-mobile-number">{{userInfo.phone || '暂无绑定手机号'}}</span>
           </p>
         </div>
         <span class="arrow">
@@ -94,11 +96,16 @@
 </template>
 
 <script>
+  //引入
+  import {mapState} from 'vuex'
   //引入头部组件
   import HeaderTop from '../../components/HeaderTop/HeaderTop.vue'
     export default {
+      computed:{
+        ...mapState(['userInfo'])     //读取sate.js中的userInfo属性
+      },
       methods:{
-
+        
       },
         //将引入的组件注册为标签
       components:{

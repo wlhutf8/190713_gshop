@@ -11,7 +11,8 @@
     </HeaderTop>
     <!--首页导航-->
     <nav class="msite_nav">
-      <div class="swiper-container">
+      <!-- 因为该地方后台没有实际数据，所以数组的长度为0的 -->
+      <div class="swiper-container" v-if='categorys.length>0'>
         <div class="swiper-wrapper">
           <!-- <div class="swiper-slide" v-for='(categorys,index) in categorysArr' :key='index'>
             <a href="javascript:" class="link_to_food" v-for='(category,index) in categorys' :key='index'>
@@ -169,6 +170,8 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
       </div>
+      <!-- 因为上面数组为0，所以显示以下图片 -->
+      <img src="./images/11.jpg" alt="back" v-else>
     </nav>
     <!--首页附近商家,这里是引用的组件-->
     <ShopList></ShopList>
